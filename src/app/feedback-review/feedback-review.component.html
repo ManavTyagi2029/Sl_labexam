@@ -1,0 +1,84 @@
+<div>
+    <header>
+        <mat-toolbar color="warn">
+            <mat-toolbar-row>
+              <span>Book Reviews</span>
+              <span class="example-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </header>
+
+    <section>
+        <p class='fmessage'>Because your Review matters!</p>
+    </section>
+
+    <section>
+        <div>
+            <mat-card class="form-card">
+                <div class="form-inputs">
+                    <form #feedbackForm="ngForm" (ngSubmit)='onSubmit(feedbackForm)'>  
+                            <mat-form-field class="form-comp">
+                              <mat-label>Book Name</mat-label>
+                              <input matInput name="username" #username="ngModel" [(ngModel)]=feedbackService.selectFeedback.username placeholder="Enter name of Book" required>
+                            </mat-form-field>
+
+                            <mat-form-field class="form-comp">
+                                <mat-label>Publication Date</mat-label>
+                                <input matInput name="eventname" #eventname="ngModel" [(ngModel)]=feedbackService.selectFeedback.eventname placeholder="Enter in 'Month/Date/Year' Format" required>
+                              </mat-form-field>
+                          
+                            <mat-form-field class="form-comp">
+                              <mat-label>Enter your experience (On scale of 5)</mat-label>
+                              <textarea matInput name="eventreview" #eventreview="ngModel" [(ngModel)]=feedbackService.selectFeedback.eventreview placeholder="On scale of 5" required></textarea>
+                            </mat-form-field>  
+                            
+                            <div class="btn-container">
+                                <div class="btn-cls">
+                                    <button mat-raised-button type="submit" color="warn" >Submit</button>
+                                </div>
+                                <div class="btn-cls">
+                                    <button mat-raised-button type="button" color="warn" (click)="resetForm(feedbackForm)">Reset</button>
+                                </div>
+                              
+                                
+                            </div>
+                            
+                       
+                    </form>
+                </div>
+            </mat-card>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <section>
+        <h1>Reviews Section</h1>
+        <div class="review-section">
+            <mat-card class="review-card" *ngFor="let feedback of feedbackService.feedbacks">
+                <mat-card-header>
+                  <mat-card-title>Book Name - {{feedback.username}}</mat-card-title>
+                  <mat-card-subtitle>Published Date - {{feedback.eventname}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>  Ratings -
+                    {{feedback.eventreview}}
+                  </p>
+                </mat-card-content>
+              </mat-card>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <mat-card>
+                <h5>Created by Manav Tygai (201800044)</h5>
+                <p>
+                    Copyright &copy; 2020
+                </p>
+            </mat-card>
+        </div>
+        
+    </footer>
+
+</div>

@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.fmessage{
+    font-style:italic;
+    padding: 2rem;
+    text-align:center;
+}
+
+.form-card{
+    width:600px;
+    margin:auto;
+}
+
+.hidden{
+    display:none;
+}
+
+.form-comp{
+    display: block;
+}
+
+.btn-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-class{
+    padding:10px;
+    margin:5px;
+}
+
+.btn-container > div {
+    box-sizing: border-box;
+    margin: 10px 10px 0 0;
+  }
+
+.review-card{
+    max-width: 600px;
+    margin:2rem auto;
+
+}
+
+h1{
+    text-align:center;
+    margin:1rem;
+}
+
+
+.footer{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2rem;
+    margin-top:2rem;
+    text-align:center;
+    width:400px;
+}
